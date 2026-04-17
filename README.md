@@ -25,5 +25,5 @@
 ## 使用方式
 
 1. 在 GitHub Codespaces 中打开本仓库
-2. 安装 playwright-mcp 用于截图
+2. 安装 playwright-cli 用于浏览器截图
 3. 按照 PROMPT.md 中的指示执行实验

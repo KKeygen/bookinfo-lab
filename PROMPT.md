@@ -4,12 +4,20 @@
 
 ## 前置准备
 
-### 安装 playwright-mcp
-用于在无头浏览器中截图：
+### 安装 playwright-cli
+用于浏览器自动化和截图：
 ```bash
-npm install -g @anthropic-ai/claude-mcp-playwright
-# 或者
+npm install -g @anthropic-ai/claude-code-playwright
 npx playwright install chromium
+```
+使用方法：
+```bash
+# 打开浏览器
+playwright-cli open http://localhost:9080/productpage
+# 截图
+playwright-cli screenshot --filename=screenshots/03-productpage.png
+# 关闭浏览器
+playwright-cli close
 ```
 
 ### 安装基础工具
@@ -294,6 +302,6 @@ kubectl apply -f yaml/cpu-stress.yaml
 - Codespaces 环境是 Linux (Ubuntu)，所有命令用 bash
 - 如果镜像拉取慢，可以用镜像源 `docker.snakekiss.com` 作为 Docker Hub 加速
 - 源码部署时镜像推送到 `ghcr.io/kkeygen/` 下
-- 截图使用 playwright-mcp 在无头浏览器中完成
+- 截图使用 playwright-cli 完成（`playwright-cli open <url>` → `playwright-cli screenshot --filename=screenshots/xx.png` → `playwright-cli close`）
 - 每个端口转发命令后加 `&` 放到后台运行
 - 网络故障实验结束后记得清理：`kubectl delete -f yaml/network-partition.yaml`
